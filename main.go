@@ -1,7 +1,6 @@
 package main
 
 import "fmt"
-import "reflect"
 
 // Version is the current version of Goventus
 var (
@@ -23,8 +22,6 @@ type LogEvent struct {
 
 // LogNothing literally logs nothing
 func LogNothing(e Event) {
-	fmt.Println("ValueOf", reflect.ValueOf(e))
-
 	if e, ok := e.(LogEvent); ok {
 		fmt.Println(e.Message)
 	}
