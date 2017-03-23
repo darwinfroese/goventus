@@ -10,7 +10,7 @@ LDFLAGS=-ldflags "-X main.version=${VERSION}"
 .DEFAUT_GOAL: $(BINARY)
 
 $(BINARY): $(SOURCES)
-	go build ${LDFLAGS} -o ${BINARY} main.go
+	go build ${LDFLAGS} -o ${BINARY} $(SOURCES)
 
 .PHONY: install
 install:
