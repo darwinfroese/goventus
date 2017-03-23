@@ -1,0 +1,9 @@
+language: go
+
+go:
+  master
+
+before_install:
+  make
+install:
+  go test -v ./...

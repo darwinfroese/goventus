@@ -1,7 +1,13 @@
+# ignore mac os x files
+.DS_Store
+
 # Compiled Object files, Static and Dynamic libs (Shared Objects)
 *.o
 *.a
 *.so
+
+# ignore the binary
+goventus
 
 # Folders
 _obj
