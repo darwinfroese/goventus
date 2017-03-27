@@ -10,9 +10,17 @@ var (
 func main() {
 	fmt.Println("Goventus", version)
 
+	notifier := make(chan EventObject)
+	go Run(notifier)
+
 	Subscribe(LogNothing, Log)
-	Notify(Log, LogEvent{Message: "Message 1"})
-	Notify(Log, LogEvent{Message: "Message 2"})
+	notifier <- EventObject{
+		EventType: Log,
+		Event:     LogEvent{Message: "Hello World"},
+	}
+
+	for {
+	}
 }
 
 // LogEvent is an event type for logging
